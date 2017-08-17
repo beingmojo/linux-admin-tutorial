@@ -1,0 +1,24 @@
+First thing you should know about linux system administration is ability to use MAN pages.
+To access MAN page of any command all you have to do is open terminal window and type keyword 'man' and type in the command you want to see the MAN page for and hit enter.
+man ls
+MAN page is pretty self explanatory, one should know how to read the conventions used in the man pages. 
+A MAN page is usually divided in to 5-6 section. 
+Up on top you'll section NAME, SYNOPSIS, DESCRIPTION; as you scroll down the page you'll find sections like AUTHOR, COPYRIGHT, SEE ALSO.
+NAME: This section describes the name of the command.
+SYNOPSIS: This section briefly describes usage of the command. This is very important. For example, in our command ls, SYNOPSIS shows this,
+ls [OPTION]... [FILE]...
+[OPTION] means that you can use the flags with the command.
+For example, ls -l
+-l means long listing of items within current directory.
+Another example can ls -a
+which means that show all entries. Usually when you do ls -l or just ls, you only get the items which are not hidden. There are still items which start with the a period before their name. For example .bash_profile or .bashrc files.
+When you give -a flag to the ls command, it shows you all the items including the hidden ones.
+Usually -a flag is given along with -l flag like here, ls -al.
+
+Dots(...) after the [OPTION] means that there can be more than one flag or option given to the command, like we saw in our example above.
+Second thing shown in SYNOPSIS is [FILE], which means after passing the flags or options, we can ask for items with in specific directory.
+For example, ls -al /etc/
+This will list all the items with in /etc/ directory.
+
+Next section is DESCRIPTION, which basically defines what all flags or options are available. This section show exactly how you can use the flags and what their intented output will be.
+   
