@@ -3,7 +3,7 @@ To access MAN page of any command all you have to do is open terminal window and
 type in the command you want to see the MAN page for and hit enter.
 man ls
 MAN page is pretty self explanatory, one should know how to read the conventions used in the man pages. 
-A MAN page is usually divided in to 5-6 section. 
+A MAN page is usually divided in to 5-6(approx.) section. 
 Up on top you'll section NAME, SYNOPSIS, DESCRIPTION; as you scroll down the page you'll find sections like AUTHOR, COPYRIGHT, SEE ALSO.
 NAME: This section describes the name of the command.
 SYNOPSIS: This section briefly describes usage of the command. This is very important. For example, in our command ls, SYNOPSIS shows this,
