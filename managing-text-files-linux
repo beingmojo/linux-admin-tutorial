@@ -1,0 +1,76 @@
+1. linux and unix are managed through a series of text files.
+
+2. Most linux configuration files are text files.
+
+3. linux editors are text editors.
+
+4. To identify the types of files in the current directory use command 'file'
+for example, file *
+this will print types of all the files in the current directory.
+
+5. cat command
+example, cat filname
+prints the contents of the files to the screen.
+
+6. less and more command
+more filename :you can scroll through text of a file, start to finish, one
+screen at a time.
+
+less filename :can scroll in both direction, up and down, using the keys 
+PAGE UP and PAGE DOWN.
+
+**To search in the text, use / forward slash and a ? question mark to 
+search through the file.
+To search in forward direction use / forward slash.
+To search in reverse direction use ? question mark.
+
+Question :How less is different than cat and more command?
+Answer :less command can read text files compressed in Gzip format 
+without uncompressing them, usually shown with .gz extension. 
+ 
+7. head and tail command
+head filename :looks at first 10 lines of a file.
+head -n20 filename :now first 20 lines will be displayed, 
+alter any number after -n flag and lines shown from top can be customized.
+
+tail filename :looks at last 10 lines of a files.
+tail -n25 filename :customize the number of lines displayed by altering the 
+number right after -n flag.
+
+8. sort command
+sort filename :by default, sort command sorts the contents of the file
+ in alphabetical order, depending on the first letter in each line.
+
+9. grep and egrep command
+grep 'searchterm' filename
+search the search term from the file.
+
+egrep command enables the grep utility to use regular expression with the 
+command.
+
+10. diff command
+diff filename1 filename2
+This command prints the content difference between the files.
+
+11. wc command
+wc filename
+returns the number of lines, words, and characters in a file.
+for example, wc -w filename1 :this prints number of words in the file.
+
+12. sed command
+short for stream editor.
+This command searchs for and changes specified words or even text streams in
+a file.
+for example, sed 's/windows/linux/' filename1 > filename2
+This replace every first instance of the word 'windows' in every line
+ with the word 'linux'.
+If there are more than one instances of the word 'windows' in any line then 
+they will not be replaced.
+To be able to do that, alter the flag g,
+sed 's/windows/linux/g' filename1 > filename2
+Now all the instances of the word 'windows' will be replaced word 
+'linux' and the results will be saved to a new file filename2.
+
+ 
+
+ 
