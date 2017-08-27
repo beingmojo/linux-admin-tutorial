@@ -1,0 +1,30 @@
+1. The default shell in linux is bash (Bourne-Again Shell).
+
+2. The default shell can be changed to desired one for any individual users
+in the /etc/passwd file.
+
+3. Different kind of shells:
+(I)  bash :default shell, abbreviation for Bourne-Again Shell.
+(II) dash :simpler shell with fewer features than bash, but faster.
+(III)tcsh :enhanced version of Unix C shell.
+(IV) zsh  :sophiticated shell, similar to korn shell.
+
+4. All these shells are configured in /bin directory.
+
+5. Most direct way to change the default to any of these shells is to 
+change the default shell in the /etc/passwd file.
+For example, the line that applies to any regular account,
+mojo:x:1000:1000:mojo:/home/mojo:/bin/bash
+To change the default to dash shell, change /bin/bash to /bin/dash
+
+6. Difference between regular and administrative users.
+Two basic prompts are available.
+
+Any prompt with a $ symbol at the end, for example,
+[mojo@localhost ~]$
+is a standard regular user account.
+
+Any prompt with a # symbol at the end, for example,
+[root@localhost mojo]#
+is a root administrative user for the same system.
+  

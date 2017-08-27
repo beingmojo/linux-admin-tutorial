@@ -1,0 +1,119 @@
+1. Linux uses three basic data streams.
+
+2. Three kinds of data streams,
+(I)   Data goes in   :Standard input (stdin),
+(II)  Data comes out :Standard output (stdout),
+(III) Error are sent in a different location :Standard error (stderr).
+
+3. Normally, input comes from the keyboard and goes out to the screen, 
+while errors are sent to a buffers.
+
+4. You can redirect each of these streams to or from a file.
+
+5. If you have a program named database and datafile with a lot of data,
+content of that file can be sent to the database with left redirection arrow<.Example, 
+database < datafile
+
+6. dmesg | less
+Standard input can come from the left side of the command as well.
+Here output of dmesg is redirected as standard input to less.
+
+Examples with explanations;
+1. cat file1 /etc/issue
+prints the content of file1 and /etc/issue files to the screen.
+
+2. cat file1 /etc/issue > file2
+This creates a file named file2 or overwrite an exisiting file2 with the 
+outputed text.
+
+3. cat file1 /etc/issue >> file2
+This creates a new file name file2, and in case there is an existing file 
+file2 then it appends it with output of the command.
+
+4. mysql table_name > backup.sql
+This command creates a backup.sql file with contents of table_name from 
+mysqldump.
+
+5. mysql table_name < backup.sql
+Here contents of backup.sql are saved to the table_name of the database named
+ mysql.
+
+6. badcommandd 2> error.txt
+Nothing prints to the screen.
+Since badcommandd is not a right command, the error goes to the file error.txt.
+
+7. badcommandd 2>> error.txt
+This does exactly same thing as above however, doesn't overwrite the existing error.txt, it appends the contents with new contents.
+
+8. /dev/null
+If there are lot of errors which we don't want to save and store to any file. We can simply redirect them to the /dev/null file.
+
+There is a place on linux to dump all errors.
+
+This is kernel location for empty information.
+
+It is where information goes to die.
+
+Any information goes there it is instanly lost.
+
+For example, badcommandd 2> /dev/null
+
+9. lets create a file,
+vi commandfile
+
+The content of the file are: 
+badcommandd
+ls -l /etc
+
+Now lets give that file permissions to execute,
+chmod u+x command
+
+Lets execute the file,
+./commandfile
+
+You'' see both the standard error and output are printed together.
+
+If you try to redirect standard output to the file then standard error will 
+be printed to the screen.
+
+To be able to redirect both the standard output and standard error to a file,
+./commandfile &> output.txt
+
+./commandfile &>> output.txt
+This will append the existing output.txt file.
+
+
+10. How to convert standard error to standard output?
+Why would we like to do so?
+
+So that standard error can pipe through various other commands 
+for example grep.
+
+badcommandd 2>&1 | grep "command"
+This command redirect standard error to the grep as standard output so that it can grep or search the term "command" in its contents.
+
+11. ls /etc/ | grep motd
+here output of ls command are piped through grep and motd is searched from 
+the contents.
+
+12. ls /etc/ | less
+here output of ls command are piped through less editor for easy scrolling 
+and reading.
+
+13.ls -l /etc/ | less
+same as above operation ls command lists out the contents and pipes them 
+through less.
+
+14. ls -fy >> log.file 2>&1
+redirection arrows >> output the standard output to log.file but prints the 
+standard to the screen. To save the error to the log.file as well 2>&1 is 
+used.
+Now both the standard error and standard output are transfered to the 
+log.file.
+  
+ 
+  
+
+
+
+
