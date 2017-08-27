@@ -1,0 +1,105 @@
+grep command uses a search term to look through a file. 
+It returns the full line that contains the search term.
+
+egrep command or extented grep command is more extension of grep utility.
+
+egrep allows the use of regular expression to search.
+
+character such as the following:
++ :addition symbol
+? :question mark
+| :pipe symbol or used as OR symbol in programming languages like java, javascript, or cpp.
+() :parenthesis
+
+If you plan on searching for any of above character special characters from 
+a grep command than make sure to use the escape character which is / :backslash character.
+
+example 1.
+grep '^#' /etc/ssh/sshd_config
+in this command ^ symbol means search for term which starts with the following character.
+So in this example, search file is /etc/ssh/sshd_config and command will search anything which starts with symbol #. 
+In linux any thing that starts with a # character is considered a comment.
+
+example 2.
+grep -i 'rsaauth' /etc/ssh/ssh_config
+In this example -i flag means that search case insensitive meaning regardless
+of case search for the given search term.
+
+example 3. 
+grep 'user' /etc/passwd
+This is simple search of user word in /etc/passwd.
+
+example 4.
+grep -v '^#' file1
+In this example -v flag means display the inverse of whatever follow.
+Here the command will print all that does not start with # character. 
+Because the command ask for anything starting with # character however we have a -v flag in place so only inverse following command will print.
+
+
+example 5.
+grep 'world$' file1
+This command prints anything that ends with word 'world'.
+Because the search term is followed by $ (dollar) character.
+
+example 6.
+grep -i '^apple$' file1
+This command searches for anything that start and ends with the word 'apple'.
+Search results will be displayed both from uppercase and lowercase because of -i flag.
+
+example 7.
+grep [aA]pple file1
+This means search anything which start with 'a' or 'A' and followed up with term pple.
+
+example 8.
+grep '^[aA]pple' file1
+This is again the same thing meaning print anything starting a or A.
+
+example 9. 
+grep '[^linux]admin' file1
+When there is a '^' carrot symbol inside '[]' square brackets, it means that print anything that doesn't match this.
+Hence the meaning of ^ symbol is opposite when it appears inside the square brackets[].
+In other if ^ appears with [], print the inverse of what follows what ^ within [].
+
+extended grep or egrep command examples.
+egrep can also be used as 'grep -E' when in commands. 
+example 10.
+grep -E '(a)+' file1
+Here -E is for extended grep, + means preciding element is used one or more times.
+
+example 11.
+grep 'a...e' file1
+Every period basically represents a character. 
+So search anything that start with a and has three more characters, and ends with a.
+Those three characters can be anything.
+
+example 12.
+grep 'nologin' /etc/passwd
+Search for term 'nologin'.
+
+example 13. 
+grep systemd /var/log/messages
+This search for term 'systemd' within file at /var/log/messages .
+
+example 14.
+grep systemd /var/log/messages | grep 'suspend'
+The symbol '|' is pipe symbol. 
+Here this means that pipe the results or previous command through what follows after | symbol.
+Hence, results of previous command are passed through second grep command, 
+which is search for term 'suspend'. 
+
+example 15. 
+grep systemd /var/log/messages | grep 'desktop'
+This basically the same as example 14. 
+This means search for term 'systemd' in /var/log/messages and pass those 
+second grep command, which is search for term 'desktop'.
+
+example 16.
+cat /var/log/messages | grep 'desktop'
+The point of this example is to show that you can show any command with 
+| pipe symbol not just grep.
+This command print everything from /var/log/messages with 'desktop' in it.
+
+ 
+ 
+ 
+  
