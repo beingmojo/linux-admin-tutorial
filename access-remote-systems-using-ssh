@@ -1,0 +1,76 @@
+1. The standard RHEL 7 leaves port 22 open for SSH access.
+Related configuration files are at /etc/ssh directory.
+
+2. Main ssh client configuration file is /etc/ssh/ssh_config . Individual 
+users can have custom SSH client configurations in their ~/.ssh/config files.
+
+3. Accessing remote server using another remote server.
+First lets access first remote server,
+ssh user@54.214.180.149
+Now, lets login to another server from above remote server,
+ssh user@34.211.144.147
+
+4. Transfering files with ssh.
+All these tools can be used,
+(I)  scp :secure copy protocol,
+(II) ssh :secure shell,
+(III)sftp:secure file transfer protocol,
+
+5. Using scp,
+scp file1 user@54.214.180.149:~/
+The last part after : signifies the destination address, here it means destination user  home directory.
+This transfered file1 from one remote server to another.
+
+6. Using sftp,
+lets download files from remote server, this can be done using scp as well.
+
+sftp user@34.211.144.147
+You'll get sftp prompt like this,
+sftp> 
+Here you can perform various linux commands.
+
+get file2
+This will download the file2 to server you are logged on.
+
+put file1
+This will upload the file1 from current server to remote server.
+
+You can create directory using sftp on remore server,
+sftp> mkdir test
+
+sftp> bye
+quit sftp
+
+sftp> quit
+quit sftp
+
+7. If you want to issue a command on remote machine, 
+You can search that from history of ssh, by hitting Ctrl+r and type ssh,
+look through commands and select one.
+
+8. Let enter the /etc/ssh
+vi sshd_config
+
+look for this line,
+#PermitRootLogin yes
+This means that you can login as root user to the remote system.
+This is right commented as there is a # character in front of the line.
+This is security hole and a bad practice.
+
+9. Now if you were to uncomment no change it to No, 
+
+Once you change the configurations, you'll perform,
+
+systemctl restart sshd
+
+that'll apply that change.
+
+10. Now if you have to issue some command to the remote system directly
+without actually connecting to that server.
+
+ssh user@54.214.180.149 ls -l
+
+This will list the home directory of remote server.
+
+
+ 
