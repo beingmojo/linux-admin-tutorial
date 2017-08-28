@@ -1,0 +1,87 @@
+1. Lets do systemctl on remote server
+systemctl get-default
+
+The screen prints: 
+multi-user.target
+This allows us to configure multiusers.
+
+If you do the same command on local machine, you 'll see
+graphical.target
+
+2. How to switch users in a system?
+su root
+This will change the user to root, but will not load the profile 
+ customization file of root.
+
+3. There are two kinds of shells in a system.
+(I)  interactive shell :Its a interactive shell if you are typing at the
+ command prompt.
+(II) login shell :This specifies loading custom environment variable and a 
+specific customization file.
+
+4. What is .bash_profile?
+.bash_profile is a customization script for the login shell.
+
+So, everything inside of .bash_profile gets executed when login shell loads.
+
+5. Every user and root of the system has one .bash_profile .
+
+6. Lets try to edit .bash_profile ,
+cd /home/user
+vi .bash_profile
+
+echo "you have entered the LOGIN shell."
+
+save and exit.
+
+7. How to login to a login shell?
+su -
+dash represents login shell
+OR
+su --login
+
+As you login in to 'su -' you'll see the echo message that we added to the 
+.bash_profile file earlier. 
+
+8. If you want to login to root user and keep customization same as regular user than do 
+su
+If you want to load everything inside .bash_profile, customization of 
+.bash_profile, do this,
+su -
+
+9. Looking inside .bash_profile
+PATH=$PATH:$HOME/bin
+This is your PATH environment variable.
+Now everything inside your path environment variable allows you to run it
+as excecutable without requiring a absolute path of the location.
+
+9. If you do this,
+which ls
+you'll see this,
+/usr/bin/ls
+This is the absolute path of ls program.
+But ls works regardless whether you give its absolute path everytime.
+This is because /usr/bin is added inside our path environment variable.
+
+echo $PATH
+This is your environment variable,
+You'll see /usr/bin
+So environment PATH variable can be customized.
+
+10. File .bash_profile is executed whenever we are in login shell.
+
+11. File .bashrc is executed whenever we are in interactive shell.
+
+12. Global bash profile customization script,
+cd /etc
+ls -l | grep profile
+You'll see file 'profile'
+This file is global customization script file.
+
+13. This means that this file gets executed whenever any user logs into the 
+system.
+
+14. Also keep in mind that each user still have their own .bash_profile file.
+
+
+
