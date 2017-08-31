@@ -1,0 +1,42 @@
+1. YANK
+yy :copy entire line
+
+2. PASTE
+p :paste after cursor
+
+3. PASTE again
+P :paste before cursor
+
+4. CUT
+dd :cut entire line
+
+5. 2yy :copy two lines
+change number in front of the 'yy' and that many lines are copied
+
+6. 2dd :cut two lines
+change number in front of the 'dd' and that many lines are cut
+
+7. shift+g :move to the bottom of the page.
+
+8. 1+shift+g :move to the top of the page.
+
+9. cw :puts you inside insert mode
+
+10. cc :cuts the current line and puts you in insert mode.
+
+11. :%s/oldword/newword
+This replaces the first occurence of word on each line 'oldword' with 
+word 'newword'
+
+12. :%s/oldword/newword/g 
+This change all occurences of the oldword with newword.
+
+13. :!ls 
+This lists the contents of current working directory within vi.
+
+14. :w 
+write command
+:q
+quite command
+:wq write and quite
+
