@@ -1,0 +1,71 @@
+1. Tar utility doesn't compress files/folders, it archives them.
+
+2. gzip hello1
+This compresses the file and you'll be see on 'ls'
+hello1.gz
+
+3. gunzip hello2.gz
+gzip -d hello2.gz
+Both commands uncompresses the .gz file.
+
+4. As you unzip the compressed files, if same name files are present in current location they'll be replaced with ones getting unziped.
+
+5. Can't compress a directory. A directory is always archived.
+
+6. tar -cvf myarchive.tar dir1/ file1 file2 file3
+flag description: 
+c :create new tar file and write the existing name we are passing here.
+v :verbose, show what is going on.
+f :user archive file
+
+7. tar -tf myarchive.tar
+t :list the contents of an archive.
+
+8. tar -cvzf myarchive.tar.gz dir/ file1 file2 file 3
+Flag description:
+z :pass it through gzip, which means that it compresses it as well at the same time.
+
+9. tar -xvf myarchive.tar
+x :extract files
+
+10. If there a change in the file with name say 'file1'. How to check whether
+files are archive are any different then the one present outside (with the same name ofcourse).
+ tar -dvf myarchive.tar
+
+This print the file difference to the screen.
+
+11. If you what see the compression information of the .gz files,
+gzip -l hello1.gz
+This will print the compresion information of the compresses files
+
+12. STAR another archiving utility,
+yum install star
+star is not installed by default on the system.
+
+13. star -c -f=myarchive.tar dir1/ file1 file2 file3
+This will archive the listed directory and the files
+
+14. star -t -f=myarchive.tar
+This lists out the contents of myarchive.tar utility.
+
+15. star -x -f=myarchive.tar.gz
+x :extract files
+This method of extracting the files doesn't overwrite newer data of same file
+name on the system.
+It provides user some more protection from overwriting files.
+
+16. In case you want to extract only one file from the compresses or archived directory.
+star -x -f=myarchive.tar.gz file3
+This will extract only the file3.
+
+17. rm -f file1
+deletes forcibly without warning
+rm -rf dir1
+deletes recursively, forcibily, without warning.
+rm -f *tar
+rm -f *gz
+delete anything that end with after * term.
+
+
+    
+
